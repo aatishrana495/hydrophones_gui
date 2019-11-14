@@ -28,10 +28,38 @@ Hydrophones::Hydrophones(QWidget *parent)
 
 Hydrophones::~Hydrophones() { delete ui; }
 
-void Hydrophones::plotTdata(double arr[], int time[], int length) {}
-void Hydrophones::plotFdata(double arr[], int time[], int length) {}
-void Hydrophones::plotSegment(double arr[], int time[], int length) {}
-void Hydrophones::plotCorrelation(double arr[], int time[], int length) {}
+void Hydrophones::plotTdata(double arr[], int time[], int length) {
+  for (int i = 0; i < length; i++) {
+    ui->tdata->graph()->addData(time[i], arr[i]);
+  }
+  ui->tdata->replot();
+  ui->tdata->yAxis->rescale();
+  ui->tdata->replot();
+}
+void Hydrophones::plotFdata(double arr[], int time[], int length) {
+  for (int i = 0; i < length; i++) {
+    ui->fdata->graph()->addData(time[i], arr[i]);
+  }
+  ui->fdata->replot();
+  ui->fdata->yAxis->rescale();
+  ui->fdata->replot();
+}
+void Hydrophones::plotSegment(double arr[], int time[], int length) {
+  for (int i = 0; i < length; i++) {
+    ui->segment->graph()->addData(time[i], arr[i]);
+  }
+  ui->segment->replot();
+  ui->segment->yAxis->rescale();
+  ui->segment->replot();
+}
+void Hydrophones::plotCorrelation(double arr[], int time[], int length) {
+  for (int i = 0; i < length; i++) {
+    ui->correlation->graph()->addData(time[i], arr[i]);
+  }
+  ui->correlation->replot();
+  ui->correlation->yAxis->rescale();
+  ui->correlation->replot();
+}
 void Hydrophones::resetGraph() {
   ui->tdata->graph()->data()->clear();
   ui->fdata->graph()->data()->clear();
