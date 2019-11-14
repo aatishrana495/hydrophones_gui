@@ -26,7 +26,11 @@ private:
   void plotFdata(double arr[], int time[], int length);
   void plotSegment(double arr[], int time[], int length);
   void plotCorrelation(double arr[], int time[], int length);
-  void resetGraph();
+  void resetGraphTdata();
+  void resetGraphFdata();
+  void resetGraphSegment();
+  void resetGraphCorrelation();
+  void resetGraphAll();
 };
 
 #endif // HYDROPHONES_H

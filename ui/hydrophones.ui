@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1038</width>
-    <height>843</height>
+    <width>969</width>
+    <height>824</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,15 +23,24 @@
       <height>311</height>
      </rect>
     </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QCustomPlot" name="fdata" native="true">
     <property name="geometry">
      <rect>
-      <x>540</x>
+      <x>520</x>
       <y>30</y>
       <width>421</width>
       <height>311</height>
      </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QCustomPlot" name="segment" native="true">
@@ -39,9 +48,12 @@
      <rect>
       <x>30</x>
       <y>370</y>
-      <width>421</width>
+      <width>461</width>
       <height>311</height>
      </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QCustomPlot" name="correlation" native="true">
@@ -53,6 +65,74 @@
       <height>311</height>
      </rect>
     </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="reset_tdata">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>730</y>
+      <width>111</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Reset Tdata</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="reset_fdata">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>730</y>
+      <width>121</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Reset Fdata</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="reset_segment">
+    <property name="geometry">
+     <rect>
+      <x>309</x>
+      <y>730</y>
+      <width>121</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Reset Segment</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="reset_correlation">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>730</y>
+      <width>131</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Reset Correlation</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="reset_all">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>730</y>
+      <width>161</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Reset All</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -60,7 +140,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1038</width>
+     <width>969</width>
      <height>19</height>
     </rect>
    </property>

@@ -24,6 +24,14 @@ Hydrophones::Hydrophones(QWidget *parent)
   ui->correlation->axisRect()->setRangeZoom(Qt::Horizontal);
   ui->correlation->axisRect()->setRangeZoomFactor(1.5);
   ui->correlation->xAxis->setRange(0, Range_correlation);
+
+  connect(ui->reset_tdata, SIGNAL(pressed()), this, SLOT(resetGraphTdata()));
+  connect(ui->reset_fdata, SIGNAL(pressed()), this, SLOT(resetGraphFdata()));
+  connect(ui->reset_segment, SIGNAL(pressed()), this,
+          SLOT(resetGraphSegment()));
+  connect(ui->reset_correlation, SIGNAL(pressed()), this,
+          SLOT(resetGraphCorrelation()));
+  connect(ui->reset_all, SIGNAL(pressed()), this, SLOT(resetGraphAll()));
 }
 
 Hydrophones::~Hydrophones() { delete ui; }
@@ -60,8 +68,16 @@ void Hydrophones::plotCorrelation(double arr[], int time[], int length) {
   ui->correlation->yAxis->rescale();
   ui->correlation->replot();
 }
-void Hydrophones::resetGraph() {
+void Hydrophones::resetGraphAll() {
   ui->tdata->graph()->data()->clear();
   ui->fdata->graph()->data()->clear();
   ui->segment->graph()->data()->clear();
+  ui->correlation->graph()->data()->clear();
+}
+
+void Hydrophones::resetGraphTdata() { ui->tdata->graph()->data()->clear(); }
+void Hydrophones::resetGraphFdata() { ui->fdata->graph()->data()->clear(); }
+void Hydrophones::resetGraphSegment() { ui->segment->graph()->data()->clear(); }
+void Hydrophones::resetGraphCorrelation() {
+  ui->correlation->graph()->data()->clear();
 }
